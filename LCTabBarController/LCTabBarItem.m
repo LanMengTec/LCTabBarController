@@ -30,7 +30,7 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        self.imageView.contentMode = UIViewContentModeCenter;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont systemFontOfSize:LCTabBarItemTitleFontSize];
         [self setTitleColor:LC_TABBAR_ITEM_TITLE_COLOR forState:UIControlStateNormal];
@@ -75,10 +75,10 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     
-    CGFloat imageX = 0.f;
-    CGFloat imageY = 0.f;
-    CGFloat imageW = contentRect.size.width;
-    CGFloat imageH = contentRect.size.height * LCTabBarItemImageRatio;
+    CGFloat imageX = 5.0f;
+    CGFloat imageY = 5.0f;
+    CGFloat imageW = contentRect.size.width - 10.0f;
+    CGFloat imageH = contentRect.size.height * LCTabBarItemImageRatio - 10.0f;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
 

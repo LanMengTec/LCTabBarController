@@ -157,6 +157,29 @@ const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge title font s
 ## Release
 
 
+### V 1.1.2
+
+* For LanMeng Tec.
+* 
+    ````objc
+    tabBarItem.imageView.contentModel == UIViewContentModeCenter;
+    
+    -->
+    
+    tabBarItem.imageView.contentModel == UIViewContentModeScaleAspectFit;
+    ````
+* const CGFloat LCTabBarItemImageRatio     = 1.00f;
+* 
+    - (CGRect)imageRectForContentRect:(CGRect)contentRect {
+    
+        CGFloat imageX = 5.0f;
+        CGFloat imageY = 5.0f;
+        CGFloat imageW = contentRect.size.width - 10.0f;
+        CGFloat imageH = contentRect.size.height * LCTabBarItemImageRatio - 10.0f;
+        return CGRectMake(imageX, imageY, imageW, imageH);
+    }
+
+
 ### V 1.2.2
 
 * 
