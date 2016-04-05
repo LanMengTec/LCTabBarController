@@ -3,7 +3,7 @@
 
 你几乎可以自定义 100% 的属性！😍 ✨
 
-![LCTabBarController](https://github.com/LeoiOS/LCTabBarController/blob/master/demo01.png)
+![LCTabBarController](https://raw.githubusercontent.com/iTofu/LCTabBarController/master/demo01.png)
 
 ````
 In me the tiger sniffs the rose.
@@ -11,7 +11,9 @@ In me the tiger sniffs the rose.
 心有猛虎，细嗅蔷薇。
 ````
 
-欢迎访问**我的博客**：http://LeoDev.me
+欢迎访问 **我的博客**：http://LeoDev.me
+
+⚠️ **揽梦科技专用！** 如果你需要，请访问 [LCTabBarController](https://github.com/iTofu/LCTabBarController)。
 
 
 
@@ -40,7 +42,7 @@ In me the tiger sniffs the rose.
 > 你可以自由设置下列属性，也可以选择去代码中直接改！
 >
 > 1. tabBar 标题字体颜色（普通、高亮等）
-> 
+>
 > 2. tabBar 标题字体
 >
 > 3. tabBar 图片所占比例
@@ -59,8 +61,9 @@ In me the tiger sniffs the rose.
 ## CocoaPods 安装
 
 把下面的代码添加到你的 Podfile 中：
+
 ````ruby
-pod 'LCTabBarController'    # Podfile
+pod 'LCTabBarControllerForLM'    # Podfile
 ````
 
 
@@ -74,91 +77,97 @@ pod 'LCTabBarController'    # Podfile
 ## 使用
 
 * 在你的 `AppDelegate.m` 里面：
-````objc
-// 导入头文件
-#import "LCTabBarController.h"
 
-// 1. 如果你项目已经开工，哪怕已经写完了
-// 只需在 application:didFinishLaunchingWithOptions: 方法里面替换一句代码
-UITabBarController *tabBarC = [[UITabBarController alloc] init];
-->
-LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
+  ````objc
+  // 0. 导入头文件
+  #import "LCTabBarController.h"
 
-// 2. 如果你刚刚开始写一个新项目
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    [self.window makeKeyAndVisible];
-    
-    // 示例代码
-    HomeVC *vc1 = [[HomeVC alloc] init];
-    vc1.view.backgroundColor = [UIColor whiteColor];
-    vc1.tabBarItem.badgeValue = @"23";
-    vc1.title = @"Home";
-    vc1.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"];
-    vc1.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_home_selected"];
-    
-    // vc2 vc3 ...
-    
-    UIViewController *vc4 = [[UIViewController alloc] init];
-    vc4.view.backgroundColor = [UIColor yellowColor];
-    vc4.tabBarItem.badgeValue = @"99+";
-    vc4.title = @"Profile";
-    vc4.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"];
-    vc4.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_profile_selected"];
-    
-    
-    UINavigationController *navC1 = [[UINavigationController alloc] initWithRootViewController:vc1];
-    UINavigationController *navC2 = [[UINavigationController alloc] initWithRootViewController:vc2];
-    UINavigationController *navC3 = [[UINavigationController alloc] initWithRootViewController:vc3];
-    UINavigationController *navC4 = [[UINavigationController alloc] initWithRootViewController:vc4];
-    
-    
-    
-    /**************************************** Key Code ****************************************/
+  // 1. 如果你项目已经开工，哪怕已经写完了
+  // 只需在 application:didFinishLaunchingWithOptions: 方法里面替换一句代码
+  UITabBarController *tabBarC = [[UITabBarController alloc] init];
+  ->
+  LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
 
-    LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
-    
-    tabBarC.viewControllers = @[navC1, navC2, navC3, navC4];
-    
-    self.window.rootViewController = tabBarC;
-    
-    /******************************************************************************************/
-    
-    
-    
-    return YES;
-}
-````
+  // 2. 如果你刚刚开始写一个新项目
+  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+      self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+      [self.window makeKeyAndVisible];
+
+      // 示例代码
+      HomeVC *vc1 = [[HomeVC alloc] init];
+      vc1.view.backgroundColor = [UIColor whiteColor];
+      vc1.tabBarItem.badgeValue = @"23";
+      vc1.title = @"Home";
+      vc1.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"];
+      vc1.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_home_selected"];
+
+      // vc2 vc3 ...
+
+      UIViewController *vc4 = [[UIViewController alloc] init];
+      vc4.view.backgroundColor = [UIColor yellowColor];
+      vc4.tabBarItem.badgeValue = @"99+";
+      vc4.title = @"Profile";
+      vc4.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"];
+      vc4.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_profile_selected"];
+
+
+      UINavigationController *navC1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+      UINavigationController *navC2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+      UINavigationController *navC3 = [[UINavigationController alloc] initWithRootViewController:vc3];
+      UINavigationController *navC4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+
+
+
+      /**************************************** Key Code ****************************************/
+
+      LCTabBarController *tabBarC = [[LCTabBarController alloc] init];
+
+      tabBarC.viewControllers = @[navC1, navC2, navC3, navC4];
+
+      self.window.rootViewController = tabBarC;
+
+      /******************************************************************************************/
+
+
+
+      return YES;
+  }
+  ````
 
 * **搞定！**
 
 * 你可以在 `LCTabBarCONST.h/.m` 中随意更改下列属性，其他更多属性可直接阅读代码更改！
-````objc
-#define LC_TABBAR_ITEM_TITLE_COLOR      // tabBar 标题字体颜色
-#define LC_TABBAR_ITEM_TITLE_COLOR_SEL  // tabBar 标题字体颜色 (选中)
 
-const CGFloat LCTabBarItemImageRatio     = 0.70f;   // tabBar 图片所占比例
-const CGFloat LCTabBarItemTitleFontSize  = 10.0f;   // tabBar 标题字体大小
-const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge 字体大小
-````
+  ````objc
+  #define LC_TABBAR_ITEM_TITLE_COLOR      // tabBar 标题字体颜色
+  #define LC_TABBAR_ITEM_TITLE_COLOR_SEL  // tabBar 标题字体颜色 (选中)
+
+  const CGFloat LCTabBarItemImageRatio     = 0.70f;   // tabBar 图片所占比例
+  const CGFloat LCTabBarItemTitleFontSize  = 10.0f;   // tabBar 标题字体大小
+  const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge 字体大小
+  ````
 
 
 
 ## 示例
 
-![LCTabBarController](https://github.com/LeoiOS/LCTabBarController/blob/master/demo01.png)
+![by http://LeoDev.me](https://raw.githubusercontent.com/iTofu/LCTabBarController/master/demo01.png)
 ---
-![LCTabBarController](https://github.com/LeoiOS/LCTabBarController/blob/master/demo02.png)
+![by http://LeoDev.me](https://raw.githubusercontent.com/iTofu/LCTabBarController/master/demo02.png)
 ---
-![LCTabBarController](https://github.com/LeoiOS/LCTabBarController/blob/master/demo03.png)
+![by http://LeoDev.me](https://raw.githubusercontent.com/iTofu/LCTabBarController/master/demo03.png)
 ---
-![LCTabBarController](https://github.com/LeoiOS/LCTabBarController/blob/master/demo04.png)
+![by http://LeoDev.me](https://raw.githubusercontent.com/iTofu/LCTabBarController/master/demo04.png)
 
 
 
 ## 版本
+
+### V 1.1.3
+
+* 更新 CocoaPods 源地址。
 
 
 ### V 1.2.2
@@ -179,6 +188,7 @@ const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge 字体大小
 ### V 1.1.0
 
 * 适配 [揽梦云签](http://itunes.apple.com/cn/app/id1006513728)。
+
 * V 1.1.x 将为揽梦科技专用。
 
 
@@ -195,6 +205,7 @@ const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge 字体大小
 ### V 1.0.3
 
 * 删除一些日志打印。
+
 * 更新 demo 图片。
 
 
@@ -211,17 +222,21 @@ const CGFloat LCTabBarBadgeTitleFontSize = 11.0f;   // tabBar badge 字体大小
 ### V 1.0.0
 
 * 初始化提交。
+
 * 添加 [CocoaPods](https://cocoapods.org/) 支持.
 
 
 
 ## 联系
 
-* 有问题请直接 [Issues](https://github.com/LeoiOS/LCTabBarController/issues/new) :)
-* Email:leoios@sina.com & liucsuper@gmail.com
-* Blog: http://LeoDev.me & http://www.leodong.com
+* 有问题请直接 [Issues](https://github.com/iTofu/LCTabBarController/issues/new) :)
+
+* Mail: devtip@163.com
+
+* Blog: http://LeoDev.me
 
 
 
-### 授权
+## 授权
+
 本项目采用 [MIT license](http://opensource.org/licenses/MIT) 开源，你可以利用采用该协议的代码做任何事情，只需要继续继承 MIT 协议即可。
