@@ -13,7 +13,7 @@ Welcome to my blog: http://LeoDev.me
 
 ⚠️ **FOR LanMeng Tec. ONLY!** You could use [LCTabBarController](https://github.com/iTofu/LCTabBarController) if you need.
 
-**[中文介绍]**(https://github.com/iTofu/LCTabBarController/blob/master/README_zh-CN.md)
+**[中文介绍](https://github.com/iTofu/LCTabBarController/blob/master/README_zh-CN.md)**
 
 
 
