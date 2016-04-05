@@ -158,7 +158,7 @@ Just drag the LCTabBarController folder into your project.
 
 ## Release
 
-### V 1.1.3
+### V 1.1.5
 
 * Update CocoaPods source URL.
 

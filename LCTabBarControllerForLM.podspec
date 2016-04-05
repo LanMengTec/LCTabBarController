@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "LCTabBarControllerForLM"
-  s.version      = "1.1.3"
-  s.summary      = "This is for LanMeng Tec.! Please visit https://github.com/LeoiOS/LCTabBarController!  Support: http://LeoDev.me"
+  s.version      = "1.1.5"
+  s.summary      = "This is for LanMeng Tec.! Please visit https://github.com/iTofu/LCTabBarController!  Support: http://LeoDev.me"
   s.homepage     = "https://github.com/LanMengTec/LCTabBarController"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Leo" => "leoios@sina.com" }

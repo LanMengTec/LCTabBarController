@@ -165,7 +165,7 @@ pod 'LCTabBarControllerForLM'    # Podfile
 
 ## 版本
 
-### V 1.1.3
+### V 1.1.5
 
 * 更新 CocoaPods 源地址。
 
